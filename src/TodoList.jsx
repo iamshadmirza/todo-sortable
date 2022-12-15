@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import { ListItem, Input, Stack, Box, Text } from "react-native-design-system";
 import DraggableFlatList, {
   ScaleDecorator,
