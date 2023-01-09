@@ -1,6 +1,13 @@
 import React, { useState } from "react";
-import { StyleSheet, SafeAreaView } from "react-native";
-import { ListItem, Input, Stack, Box, Text } from "react-native-design-system";
+import { StyleSheet } from "react-native";
+import {
+  ListItem,
+  Input,
+  Stack,
+  Box,
+  Text,
+  Header,
+} from "react-native-design-system";
 import DraggableFlatList, {
   ScaleDecorator,
 } from "react-native-draggable-flatlist";
@@ -72,7 +79,8 @@ function TodoList() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <>
+      <Header>Sortable Todo</Header>
       <Stack horizontalSpace="md">
         <Input
           value={text}
@@ -82,7 +90,7 @@ function TodoList() {
           onSubmitEditing={handleAddTodo}
         />
       </Stack>
-      {data.length === 0 && (
+      {data && data.length === 0 && (
         <Box space="6xl">
           <Text>Start typing to add todos...</Text>
         </Box>
@@ -93,7 +101,7 @@ function TodoList() {
         keyExtractor={(item) => item.key}
         renderItem={renderItem}
       />
-    </SafeAreaView>
+    </>
   );
 }
 
